@@ -16,11 +16,13 @@ public class SetSliderValue : MonoBehaviour
     private WaitForSeconds _returnDelay;
         
     public void DoHeal()
-    {
+    {   
+        if(_targetValue < _healthBar.maxValue)
         _targetValue += _healOrDamageValue;   
     }
     public void DoDamage()
-    {
+    {   
+        if( _targetValue > _healthBar.minValue)
         _targetValue -= _healOrDamageValue;
     }
     private void Start()
