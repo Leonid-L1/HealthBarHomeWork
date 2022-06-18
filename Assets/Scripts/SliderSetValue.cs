@@ -16,19 +16,14 @@ public class SliderSetValue : MonoBehaviour
     private void Start()
     {
         _slider.value = _slider.maxValue;
-
-        if(_player.TryGetComponent<PlayerHealth>(out _currentPlayerHealth))
-        {
-            _targetValue = _currentPlayerHealth.CurrentHealth;
-        }  
+        _targetValue = _slider.value;
+        _player.TryGetComponent<PlayerHealth>(out _currentPlayerHealth);
         StartCoroutine(ChangeValue());
     }
-    
-    private void Update()
+    public void ChangeTargetValue()
     {
         _targetValue = _currentPlayerHealth.CurrentHealth;
     }
-
     private IEnumerator ChangeValue()
     {
         while (true)

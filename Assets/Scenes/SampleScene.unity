@@ -308,6 +308,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98672b0b3d958bb468d0372683314433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 218303604}
+        m_TargetAssemblyTypeName: SliderSetValue, Assembly-CSharp
+        m_MethodName: ChangeTargetValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &508407149
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -657,13 +672,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 508407148}
         m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
-        m_MethodName: GetHeal
-        m_Mode: 1
+        m_MethodName: TakeHeal
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -866,13 +881,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 508407148}
         m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
-        m_MethodName: GetDamage
-        m_Mode: 1
+        m_MethodName: TakeDamage
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1080,19 +1095,7 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1988841415
 GameObject:
   m_ObjectHideFlags: 0
