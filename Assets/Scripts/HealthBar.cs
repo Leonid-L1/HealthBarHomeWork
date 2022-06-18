@@ -12,26 +12,34 @@ public class HealthBar : MonoBehaviour
     private PlayerHealth _health;
     private float _targetValue;
     private float _step = 2f;
+    private bool _isActive;
 
     private void Start()
     {
         _slider.value = _slider.maxValue;
         _targetValue = _slider.value;
-        _player.TryGetComponent<PlayerHealth>(out _health);
-        StartCoroutine(ChangeValue());
+        _player.TryGetComponent<PlayerHealth>(out _health);       
     }
 
     public void ChangeTargetValue()
     {
         _targetValue = _health.CurrentHealth;
-    }
-
+        StartCoroutine(ChangeValue());
+    }  
     private IEnumerator ChangeValue()
     {
         while (true)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, _targetValue, _step);
-            yield return _delay;
+            _slider.value = Mathf.MoveTowards(_slider.value, _targetValue, _step);   
+            
+            if(_slider.value == _targetValue)
+            {
+                yield break;
+            }
+            else
+            {
+                yield return _delay;
+            }
         }
     }
 }
